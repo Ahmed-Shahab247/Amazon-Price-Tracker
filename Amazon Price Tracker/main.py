@@ -4,7 +4,7 @@ import smtplib
 import os
 from dotenv import load_dotenv
 
-URL = "https://www.amazon.in/Razer-Basilisk-Customizable-Ergonomic-Gaming/dp/B09C13PZX7/ref=sr_1_14"
+URL = "https://www.amazon.in/Razer-Basilisk-Customizable-Ergonomic-Gaming/dp/B09C13PZX7/ref=sr_1_14" #Enter url of the product page
 
 
 load_dotenv(".env")
@@ -58,7 +58,7 @@ soup = BeautifulSoup(response.content,"html.parser")
 
 
 
-find_price = soup.find(name="span", class_="a-price-whole").getText()
+find_price = soup.find(name="span", class_="a-price-whole").getText() #name and class may need to change depending on thhe product page elements
 
 price = find_price.split(".")[0]
 num = price.split(",")
